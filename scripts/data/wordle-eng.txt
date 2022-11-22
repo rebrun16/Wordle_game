@@ -1,0 +1,8 @@
+house
+car
+cat
+waite
+cool
+right
+sunny
+winter

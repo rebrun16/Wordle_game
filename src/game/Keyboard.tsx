@@ -1,16 +1,20 @@
+import { Fragment } from "react";
 
-const rows = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']
+const rows = ["qwertyuiop", "asdfghjkl", "zxcvbnm"];
 
-const buttons = rows.map((row: string) => row.split(""));
+const buttons = rows.map((row) => row.split(""));
 
-
-export const Keyboard = (onBackspace, onPressed) => (
+export const Keyboard = ({ onBackspace, onPressed, letterClasses }) => (
   <div className="keyboard">
-    <div >
-      {buttons.map((row: string[], index: number) => (
+    <div>
+      {buttons.map((row, index) => (
         <div key={index}>
-          {row.map((letter: string) => (
-            <button onClick={() => onPressed(letter)} key={letter}>
+          {row.map((letter) => (
+            <button
+              className={letterClasses[letter]}
+              onClick={() => onPressed(letter)}
+              key={letter}
+            >
               {letter}
             </button>
           ))}
@@ -18,9 +22,7 @@ export const Keyboard = (onBackspace, onPressed) => (
       ))}
     </div>
     <div>
-      <button onClick={() => onBackspace()}>
-      Backspace
-      </button>
+      <button onClick={() => onBackspace()}>Backspace</button>
     </div>
   </div>
-)
+);

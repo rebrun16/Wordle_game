@@ -1,18 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
-import { Keyboard } from './game/Keyboard'
-import { Field } from './game/Field'
+import "./App.css";
+import { Field } from "./game/Field";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
-      <Field/>
-      <Keyboard />
+      <Field />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
